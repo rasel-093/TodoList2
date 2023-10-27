@@ -36,7 +36,7 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment() {
         }
 
         taskViewModel = ViewModelProvider(activity).get(TaskViewModel::class.java)
-        binding.saveBtnId.setOnClickListener{
+        binding.saveBtn.setOnClickListener{
             saveAction()
         }
     }
