@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todolist.Fragment.NewTaskSheet
 import com.example.todolist.databinding.ActivityMainBinding
 import com.example.todolist.roomdb.TaskItem
+import com.example.todolist.viewmodels.TaskItemModelFactory
 import com.example.todolist.viewmodels.TaskViewModel
 
 class MainActivity : AppCompatActivity(),TaskItemClickListener {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var taskViewModel: TaskViewModel
+    private val taskViewModel: TaskViewModel by viewModels{
+        TaskItemModelFactory((application as ToDoApplication).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,7 @@ class MainActivity : AppCompatActivity(),TaskItemClickListener {
         setContentView(binding.root)
 
         //Fetching TaskViewModel and assigning to taskViewModel
-        taskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
+        //taskViewModel = ViewModelProvider(this).get(TaskViewModel::class.java)
 
         //New Task button onClickListener
         binding.newTaskBtnId.setOnClickListener{
