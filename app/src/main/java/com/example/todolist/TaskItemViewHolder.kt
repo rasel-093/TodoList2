@@ -3,7 +3,6 @@ package com.example.todolist
 import android.content.Context
 import android.graphics.Paint
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todolist.databinding.FragmentNewTaskSheetBinding
 import com.example.todolist.databinding.TaskItemCardBinding
 import com.example.todolist.roomdb.TaskItem
 import java.time.format.DateTimeFormatter

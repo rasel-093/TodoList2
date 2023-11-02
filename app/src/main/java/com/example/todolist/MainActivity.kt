@@ -6,12 +6,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.Fragment.NewTaskSheet
 import com.example.todolist.databinding.ActivityMainBinding
 import com.example.todolist.roomdb.TaskItem
+import com.example.todolist.swipeaction.SwipeGesture
 import com.example.todolist.viewmodels.TaskItemModelFactory
 import com.example.todolist.viewmodels.TaskViewModel
+import java.util.Collections
 
 class MainActivity : AppCompatActivity(),TaskItemClickListener {
     private lateinit var binding: ActivityMainBinding
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity(),TaskItemClickListener {
 
         setRecyclerView()
     }
+
 
     private fun setRecyclerView() {
         val mainActivity = this

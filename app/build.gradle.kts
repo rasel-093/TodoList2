@@ -61,5 +61,8 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.0")
     implementation("androidx.fragment:fragment-ktx:1.6.1")
 
+    //To add color or icon on row swipe
+    implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+
     annotationProcessor ("android.arch.persistence.room:compiler:1.1.1")
 }

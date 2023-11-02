@@ -8,7 +8,6 @@ class TaskItemRepository(
 )
 {
     val allTaskItems: Flow<List<TaskItem>> = taskItemDao.allTaskItems()
-
     @WorkerThread
     suspend fun insertTaskItem(taskItem: TaskItem){
         taskItemDao.inserTaskItem(taskItem)
